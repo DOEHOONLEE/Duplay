@@ -28,9 +28,12 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
     let hellotwo = document.querySelectorAll('.ytd-thumbnail-overlay-time-status-renderer');
     
     const playlistDurationResult = secToDisplayFormat(totalDuration);
+    const hi = 100;
+
+    const arr = [playlistDurationResult, 100];
     
     if (request.action == "getDOM") {
-        sendResponse({dom: playlistDurationResult});
+        sendResponse({dom: arr});
     }
     else {
         sendResponse({}); // Send nothing..
