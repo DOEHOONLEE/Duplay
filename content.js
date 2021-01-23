@@ -16,16 +16,28 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         durationSplit.forEach((cv, idx) => totalDuration += (60 ** (durationSplit.length - idx - 1)) * cv)
     });
 
-    // 각 비디오의 퍼센트와 길이 가져오기
+    // 시청한 비디오 시간 계산
     function checkWatched() {
-        document.querySelectorAll("#progress").forEach(eachPercent => {
+        document.querySelectorAll("#progress").forEach(eachVideo => {
+            const HMS = eachVideo.parentNode.parentNode.children[2].innerText;
+            const percentile = eachVideo.style.width;
 
+            // 현재 비디오 시간의 퍼센트 계산 후 시청한 시간에 더하기
+                // 현재 비디오 길이
+            const currentDuration = HMStoSecond(HMS)
+                // 시청한 퍼센트 숫자로 변환
+            const percentToNum = Number(percentile.match(/\d+/g)[0]);
+                // 현재 비디오 시청 길이
+            const watchedCurrent = Math.floor((currentDuration * percentToNum) / 100);
+
+            // 총 시청 시간에 더하기
+            watchedDuration += watchedCurrent;
         });
     }
 
     // HMS 를 초단위로 변환
-    function HMStoSecond() {
-
+        // HMS 파라미터 = HH:MM:SS 형식의 문자열
+    function HMStoSecond(HMS) {
     }
 
     // 초를 HMS 로 변환
@@ -40,6 +52,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
     const playlistDurationResult = secToDisplayFormat(totalDuration);
     const hi = 100;
 
+    // 배열 값 => [총 시간, 남은 시간, 시청 한 시간 (퍼센트)]
     const arr = [playlistDurationResult, 100];
     
     if (request.action == "getDOM") {
