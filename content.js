@@ -49,14 +49,11 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         return `${hour < 10 ? "0" + hour : hour} : ${min < 10 ? "0" + min : min} : ${sec < 10 ? "0" + sec : sec}`;
     }
     
-    const playlistDurationResult = secToDisplayFormat(totalDuration);
-    const hi = 100;
-
-    // 배열 값 => [총 시간, 남은 시간, 시청 한 시간 (퍼센트)]
-    const arr = [playlistDurationResult, 100];
+    // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
+    const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), Math.floor(watchedDuration / totalDuration * 100)];
     
     if (request.action == "getDOM") {
-        sendResponse({dom: arr});
+        sendResponse({dom: result});
     }
     else {
         sendResponse({}); // Send nothing..
