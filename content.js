@@ -1,13 +1,13 @@
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 
-        // [0] DOM selection + 필요 변수들 정의  //
+                    // [0] DOM selection + 필요 변수들 정의  //
 
     const playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer");
     let videoDurations = [];
     let totalDuration = 0;
     let watchedDuration = 0;
 
-        // [1] 함수들 정의  //
+                    // [1] 함수들 정의  //
 
     // 플레이리스트 총 시간/길이 계산
     function totalDurationCalc(playlist) {
@@ -62,13 +62,17 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         return `${hour < 10 ? "0" + hour : hour} : ${min < 10 ? "0" + min : min} : ${sec < 10 ? "0" + sec : sec}`;
     }
 
-        // [3] 함수 호출 + 전달 할 값 정의 //
+    // 시청한 영상 가져오기
+    function watchCompleted(){
+        const percent_100 = [...document.querySelectorAll('#progress')].filter(percent => percent === '100%');
+    }
+                        // [3] 함수 호출 + 전달 할 값 정의 //
 
     // 플레이리스트 총 길이 및 시청한 길이 계산
     totalDurationCalc(playlistContainer);
 
     // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
-    const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), Math.floor(watchedDuration / totalDuration * 100)];
+    const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), watchedDuration / totalDuration];
     
     if (request.action == "getDOM") {
         sendResponse({dom: result});
