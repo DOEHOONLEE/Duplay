@@ -9,8 +9,8 @@ chrome.tabs.getSelected(null, function(tab) {
         const percent = response.dom[2];
 
         // DOM 에 결과값 넣기
-        document.getElementById("total").innerHTML = `<strong>Total Duration</strong> ${total}`;
-        document.getElementById("watched").innerHTML = `<strong>Watched</strong> ${watched}`;
+        document.getElementById("total").innerHTML = total;
+        document.getElementById("watched").innerHTML = watched;
         document.getElementById("percent").innerHTML = `<strong>${percent}% completed</strong>`;
         document.getElementById("progress-bar").style.width = `${percent}%`;
     });

@@ -12,9 +12,6 @@
     "default_icon": "icon16.png",
     "default_popup": "popup.html"
   },
-  // "background": {
-  //   "scripts": ["background.js"]
-  // },
   "content_scripts": [
     {
       "run_at": "document_end",

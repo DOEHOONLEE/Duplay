@@ -4,11 +4,16 @@ html {
 
 body {
     background-color:#9c76e8;
-    height: 60px;
+    height: 64px;
 }
 
 div {
-    margin: 6px 0px;
+    margin: 8px 0px;
+}
+
+#total-container, #watched-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 #percent-container {
@@ -30,6 +35,9 @@ div {
     background-color: limegreen;
     height: 10px;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 1px 0px black;
+    -moz-box-shadow:    0px 0px 1px 0px black;
+    box-shadow:         0px 0px 1px 0px black;
 }
 
 #percent {
