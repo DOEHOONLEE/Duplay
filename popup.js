@@ -5,13 +5,13 @@ chrome.tabs.getSelected(null, function(tab) {
 
         // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
         const total = response.dom[0];
-        // const watched = response.dom[1];
-        // const percent = response.dom[2];
+        const watched = response.dom[1];
+        const percent = response.dom[2];
 
         // DOM 에 결과값 넣기
-        document.getElementById("total").innerHTML = `<strong>Total Duration</strong> ${total}`;
-        // document.getElementById("watched").innerHTML = watched;
-        // document.getElementById("percent").innerHTML = percent;
-        document.getElementById("progress-bar").style.width = "25%";
+        document.getElementById("total").innerHTML = total;
+        document.getElementById("watched").innerHTML = watched;
+        document.getElementById("percent").innerHTML = `<strong>${Math.floor(percent*100)}% completed</strong>`;
+        document.getElementById("progress-bar").style.width = `${Math.floor(percent*94)}%`;
     });
 });

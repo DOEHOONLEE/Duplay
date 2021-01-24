@@ -5,11 +5,21 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <div id="total"></div>
-        <div id="watched"><strong>Watched</strong> 1 hour 23 min</div>
+        <div id="total-container">
+            <span>
+                <strong>Total Duration</strong>
+            </span>
+            <span id="total"></span>
+        </div>
+        <div id="watched-container">
+            <span>
+                <strong>Watched</strong>
+            </span>
+            <span id="watched"></span>
+        </div>
         <div id="percent-container">
             <span id="progress-bar"></span>
-            <span id="percent"><strong>25% completed</strong></span>
+            <span id="percent"></span>
             <!-- <div id="percent"></div> -->
         </div>
         <script src="popup.js"></script>
