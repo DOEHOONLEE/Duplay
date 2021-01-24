@@ -62,14 +62,21 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         return `${hour < 10 ? "0" + hour : hour} : ${min < 10 ? "0" + min : min} : ${sec < 10 ? "0" + sec : sec}`;
     }
 
-    // 시청한 영상 가져오기
+    // 시청한 영상 투명도 조절 함수
     function watchCompleted(){
-        const percent_100 = [...document.querySelectorAll('#progress')].filter(percent => percent === '100%');
+        const percent_100 = [...document.querySelectorAll('#progress')].filter(percent => percent.style.width === '100%');
+        percent_100.forEach( video => {
+            video.parentNode.parentNode.parentNode.parentNode.parentNode.style.opacity = '0.4';
+        })
     }
+
                         // [3] 함수 호출 + 전달 할 값 정의 //
 
-    // 플레이리스트 총 길이 및 시청한 길이 계산
+    // 1. 플레이리스트 총 길이 및 시청한 길이 계산
     totalDurationCalc(playlistContainer);
+
+    // 2. 시청한 영상 투명도 조절!
+    watchCompleted();
 
     // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
     const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), watchedDuration / totalDuration];
