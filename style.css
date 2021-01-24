@@ -1,10 +1,38 @@
 html {
     width: 180px;
-    height: 50px;
 }
 
 body {
-    background-color:hotpink;
-    margin-top: 0;
-    padding-bottom: 5px;
+    background-color:#9c76e8;
+    height: 60px;
+}
+
+div {
+    margin: 6px 0px;
+}
+
+#percent-container {
+    height: 12px;
+    position: relative;
+    background-color:lightgrey;
+    border-radius: 8px;
+    padding: 2px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+#progress-bar {
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    background-color: limegreen;
+    /* width: 25%; */
+    height: 10px;
+    border-radius: 5px;
+}
+
+#percent {
+    z-index: 1000;
+    position: relative;
+    opacity: 0.7;
 }
