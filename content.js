@@ -38,6 +38,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
     // HMS 를 초단위로 변환
         // HMS 파라미터 = HH:MM:SS 형식의 문자열
     function HMStoSecond(HMS) {
+        return HMS.split(':').reverse().reduce((a,c,idx) => a + Math.pow(60,idx) * c ,0);
     }
 
     // 초를 HMS 로 변환
@@ -48,7 +49,8 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         
         return `${hour < 10 ? "0" + hour : hour} : ${min < 10 ? "0" + min : min} : ${sec < 10 ? "0" + sec : sec}`;
     }
-    
+    //테스트를 위해 checkWatched 호출
+    checkWatched();
     // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
     const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), Math.floor(watchedDuration / totalDuration * 100)];
     
