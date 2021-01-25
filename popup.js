@@ -14,4 +14,11 @@ chrome.tabs.getSelected(null, function(tab) {
         document.getElementById("percent").innerHTML = `<strong>${Math.floor(percent*100)}% completed</strong>`;
         document.getElementById("progress-bar").style.width = `${Math.floor(percent*94)}%`;
     });
-});
+
+    const shadeCheck = document.querySelector('#shadeCheck');
+    shadeCheck.addEventListener('click',function(){
+        chrome.tabs.sendRequest(tab.id, {action: "click", msg: shadeCheck.checked}, function(response) {
+            console.log('성공');
+        })
+    })
+})

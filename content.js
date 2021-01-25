@@ -63,18 +63,17 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
     }
 
     // 100 퍼센트 시청한 영상 투명도 조절 함수
-    function watchCompleted(){
-        const shadeCheck = document.querySelector('#shadeCheck').checked
+    function watchCompleted(shadeCheck){
         const percent_100 = [...document.querySelectorAll('#progress')].filter(percent => percent.style.width === '100%');
-        // if( shadeCheck ){
+        if( shadeCheck ){
             percent_100.forEach( video => {
                 video.parentNode.parentNode.parentNode.parentNode.parentNode.style.opacity = '0.4';
             })
-        // }else{
-        //     percent_100.forEach( video => {
-        //         video.parentNode.parentNode.parentNode.parentNode.parentNode.style.opacity = '1';
-        //     })
-        // }
+        }else{
+            percent_100.forEach( video => {
+                video.parentNode.parentNode.parentNode.parentNode.parentNode.style.opacity = '1';
+            })
+        }
     }
 
                         // [3] 함수 호출 + 전달 할 값 정의 //
@@ -84,15 +83,16 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 
     // 2. 100% 시청한 영상 투명도 조절!
     // document.querySelector('.switch').addEventListener('click', watchCompleted);
-    watchCompleted();
+    // watchCompleted();
 
     // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
     const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), watchedDuration / totalDuration];
     
     if (request.action == "getDOM") {
         sendResponse({dom: result});
-    }
-    else {
+    }else if (request.action == 'click'){
+        watchCompleted(request.msg);
+    }else {
         sendResponse({}); // Send nothing..
     }
 });
