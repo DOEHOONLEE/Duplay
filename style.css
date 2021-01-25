@@ -1,17 +1,17 @@
 html {
-    width: 180px;
+    width: 185px;
+    height: 102px;
 }
 
 body {
-    background-color:#9c76e8;
-    height: 64px;
+    background-color:#b39ede;
 }
 
 div {
     margin: 8px 0px;
 }
 
-#total-container, #watched-container {
+#total-container, #watched-container, #shade-controller {
     display: flex;
     justify-content: space-between;
 }
@@ -23,9 +23,6 @@ div {
     border-radius: 8px;
     padding: 2px;
     text-align: center;
-    -webkit-box-shadow: 0px 0px 3px 0px black;
-    -moz-box-shadow:    0px 0px 3px 0px black;
-    box-shadow:         0px 0px 3px 0px black;
 }
 
 #progress-bar {
@@ -35,13 +32,23 @@ div {
     background-color: limegreen;
     height: 10px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 1px 0px black;
-    -moz-box-shadow:    0px 0px 1px 0px black;
-    box-shadow:         0px 0px 1px 0px black;
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow:    0px 0px 2px 0px black;
+    box-shadow:         0px 0px 2px 0px black;
+}
+
+#percent-container, #progress-bar, #shadeCheck {
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow:    0px 0px 2px 0px black;
+    box-shadow:         0px 0px 2px 0px black;
 }
 
 #percent {
     z-index: 1000;
     position: relative;
     opacity: 0.7;
+}
+
+#shade-controller > span {
+    line-height: 19px;
 }

@@ -17,8 +17,6 @@ chrome.tabs.getSelected(null, function(tab) {
 
     const shadeCheck = document.querySelector('#shadeCheck');
     shadeCheck.addEventListener('click',function(){
-        chrome.tabs.sendRequest(tab.id, {action: "click", msg: shadeCheck.checked}, function(response) {
-            console.log('성공');
-        })
+        chrome.tabs.sendRequest(tab.id, {action: "click", msg: shadeCheck.checked})
     })
 })

@@ -41,12 +41,18 @@
   
   input:focus + .slider {
     box-shadow: 0 0 1px limegreen;
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow:    0px 0px 2px 0px black;
+    box-shadow:         0px 0px 2px 0px black;
   }
   
   input:checked + .slider:before {
     -webkit-transform: translateX(18px);
     -ms-transform: translateX(18px);
     transform: translateX(18px);
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow:    0px 0px 2px 0px black;
+    box-shadow:         0px 0px 2px 0px black;
   }
   
   /* Rounded sliders */
