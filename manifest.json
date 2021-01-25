@@ -1,5 +1,5 @@
 {
-  "name": "Playlist Duration",
+  "name": "YouTube Playlist Duration Calculator",
   "version": "1.0",
   "description": "Youtube Playlist Duration Calculator",
   "manifest_version": 2,
@@ -14,13 +14,12 @@
   },
   "content_scripts": [
     {
-      "run_at": "document_end",
-      "matches": ["https://www.youtube.com/playlist*"],
+      "run_at": "document_idle",
+      "matches": ["https://www.youtube.com/playlist?list=*"],
       "js": ["./src/content.js"]
     }
   ],
   "permissions": [
-    "activeTab",
-    "https://www.youtube.com/playlist*"
+    "activeTab"
   ]
 }
