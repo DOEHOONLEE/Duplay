@@ -2,12 +2,41 @@
 <html>
     <head>
         <title>Duration Displayer</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style/main.css">
+        <link rel="stylesheet" href="./style/switch.css">
+        <link rel="stylesheet" href="./style/tooltip.css">
     </head>
     <body>
-        <h5 id="header"></h5>
-        <h5>Watched 1 hour 23 min</h5>
-        <h6>84% completed</h6>
-        <script src="popup.js"></script>
+        <div id="total-container">
+            <span>
+                <strong>Total Duration</strong>
+            </span>
+            <span id="total"></span>
+        </div>
+        <div id="watched-container">
+            <span>
+                <strong>Watched</strong>
+            </span>
+            <span id="watched"></span>
+        </div>
+        <div id="shade-controller">
+            <span>
+                <strong>Shade Watched</strong>
+                <div class="tooltip">
+                    <span id="question-mark">?</span>
+                    <span class="tooltiptext">Shade out 100% watched videos</span>
+                </div>
+            </span>
+            <label class="switch">
+                <input type="checkbox" id = 'shadeCheck'>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div id="percent-container">
+            <span id="progress-bar"></span>
+            <span id="percent"></span>
+        </div>
+        
+        <script src="./src/popup.js"></script>
     </body>
 </html>
