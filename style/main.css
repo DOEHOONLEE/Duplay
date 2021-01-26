@@ -5,6 +5,9 @@ html {
 
 body {
     background-color:#b39ede;
+    font: 12px Arial, sans-serif;
+    width: 168px;
+    height: 102px;
 }
 
 div {
