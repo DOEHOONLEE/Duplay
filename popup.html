@@ -2,7 +2,8 @@
 <html>
     <head>
         <title>Duration Displayer</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style/main.css">
+        <link rel="stylesheet" href="./style/switch.css">
     </head>
     <body>
         <div id="total-container">
@@ -17,11 +18,18 @@
             </span>
             <span id="watched"></span>
         </div>
+        <div id="shade-controller">
+            <span><strong>Shade Watched</strong></span>
+            <label class="switch">
+                <input type="checkbox" id = 'shadeCheck'>
+                <span class="slider round"></span>
+            </label>
+        </div>
         <div id="percent-container">
             <span id="progress-bar"></span>
             <span id="percent"></span>
             <!-- <div id="percent"></div> -->
         </div>
-        <script src="popup.js"></script>
+        <script src="./src/popup.js"></script>
     </body>
 </html>
