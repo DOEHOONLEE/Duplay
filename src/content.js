@@ -84,16 +84,12 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), watchedDuration / totalDuration];
 
     if (request.action === "getDuration") {
-        console.log("CONTENT GETDURATION SUCCESS");
-        console.log(playlistContainer)
-        console.log(result)
         sendResponse({ duration: result })
     }
     else if (request.action === "shadeOut") {
         watchCompleted(request.value);
-        console.log(request.value);
     }
     else {
-        console.log("FAIL");
+        sendResponse({});
     }
 });

@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("watched").innerHTML = watched;
             document.getElementById("percent").innerHTML = `<strong>${Math.floor(percent*100)}% completed</strong>`;
             document.getElementById("progress-bar").style.width = `${Math.floor(percent*94)}%`;
-            console.log("popup success");
-            console.log(response.duration)
         });
 
         shadeCheck.addEventListener("click", function() {
