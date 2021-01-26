@@ -1,4 +1,15 @@
 .tooltip {
+    display: inline-block;
+    margin: 0 auto;
+    width: 13px;
+    height: 15px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid black;
+    vertical-align: text-bottom;
+    /* border-radius: 20px; */
+
+
 }
 
 .tooltip .tooltiptext {
