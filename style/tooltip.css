@@ -1,0 +1,38 @@
+.tooltip {
+    display: inline-block;
+    margin: 0 auto;
+    width: 10px;
+    height: 10px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid black;
+    vertical-align: text-bottom;
+    border-radius: 20px;
+}
+
+#question-mark {
+    font-size: 11px;
+    position: relative;
+    top: -5px;
+}
+
+.tooltip > .tooltiptext {
+    cursor: default;
+    visibility: hidden;
+    width: 120px;
+    left: 10px;
+    top: 30px;
+    background-color: #64567ec9;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;    
+}

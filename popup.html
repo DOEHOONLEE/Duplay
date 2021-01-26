@@ -4,6 +4,7 @@
         <title>Duration Displayer</title>
         <link rel="stylesheet" href="./style/main.css">
         <link rel="stylesheet" href="./style/switch.css">
+        <link rel="stylesheet" href="./style/tooltip.css">
     </head>
     <body>
         <div id="total-container">
@@ -19,7 +20,13 @@
             <span id="watched"></span>
         </div>
         <div id="shade-controller">
-            <span><strong>Shade Watched</strong></span>
+            <span>
+                <strong>Shade Watched</strong>
+                <div class="tooltip">
+                    <span id="question-mark">?</span>
+                    <span class="tooltiptext">Shade out 100% watched videos</span>
+                </div>
+            </span>
             <label class="switch">
                 <input type="checkbox" id = 'shadeCheck'>
                 <span class="slider round"></span>
@@ -30,6 +37,7 @@
             <span id="percent"></span>
             <!-- <div id="percent"></div> -->
         </div>
+        
         <script src="./src/popup.js"></script>
     </body>
 </html>
