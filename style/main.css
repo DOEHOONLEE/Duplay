@@ -1,13 +1,17 @@
 html {
     width: 185px;
-    height: 102px;
 }
 
 body {
     background-color:#b39ede;
     font: 12px Arial, sans-serif;
     width: 168px;
-    height: 102px;
+}
+html, body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 3px;
+    height: 112px;
 }
 
 div {
@@ -47,11 +51,28 @@ div {
 }
 
 #percent {
-    z-index: 1000;
+    z-index: 900;
     position: relative;
     opacity: 0.7;
 }
 
 #shade-controller > span {
     line-height: 19px;
+}
+
+#refresh{
+    background-color:  #64567ec9;
+    color: white;
+    position: absolute;
+    text-align: center;
+    line-height: 95px;
+    font-size: 22px;
+    /* visibility: hidden; */
+    top: 2px;
+    left: 7px;
+    width: 170px;
+    height: auto;
+    z-index: 1000;
+    border-radius: 6px;
+
 }
