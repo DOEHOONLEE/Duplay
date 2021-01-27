@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function responseValidator(arr) {
     for (let i=0; i < arr.length; i++) {
-        if (String(arr[i]).includes("NaN")) {
+        if (arr[i] == null || String(arr[i]).includes("NaN")) {
             return false;
         }
     }
