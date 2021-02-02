@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const total = response.duration[0];
                     const watched = response.duration[1];
                     const percent = response.duration[2];
+                    const thumbnail = response.duration[3];
                     
                     // DOM 에 결과값 넣기
                     document.getElementById("total").innerText = total;
@@ -21,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     // 가림막 없애기
                     document.getElementById("refresh").style.visibility = "hidden";
+                    // thumbnail 넣기
+                    createThumbnail(thumbnail);
                 }
-                console.log(response.data)
-                createThumbnail(response.data.thumbnail);
             }
         });
 

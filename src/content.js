@@ -1,9 +1,11 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-                    // [ 0 ] DOM SELECTION + 필요 변수들 정의 //
+
+    // [ 0 ] DOM SELECTION + 필요 변수들 정의 //
     let videoDurations = [];
     let totalDuration = 0;
     let watchedDuration = 0;
-
+    const thumbSrc = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src //Thumbnail IMG src
+    
                     // [ 1 ] 함수 정의 //
 
         // 플레이리스트 총 시간/길이 계산
@@ -74,9 +76,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         }
     }
 
-     //섭네일 이미지
-     const thumbSrc = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src
-
                    // [3] 함수 호출 + 전달 할 값 정의 //
                    
     // 1. 플레이리스트 총 길이 및 시청한 길이 계산
@@ -84,15 +83,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     totalDurationCalc(playlistContainer);
     
     // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
-    const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), watchedDuration / totalDuration];
-    const contentData = {
-        thumbnail: thumbSrc
-    }
-
-   
-
+    const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), watchedDuration / totalDuration, thumbSrc];
+    
     if (request.action === "getDuration") {
-        sendResponse({ duration: result, data: contentData })
+        sendResponse({ duration: result })
     }
     else if (request.action === "shadeOut") {
         watchCompleted(request.value);
