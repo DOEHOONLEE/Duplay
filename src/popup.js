@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const activeTab = tabs[0];
 
         chrome.tabs.sendMessage(activeTab.id, { action: "getDuration" }, function(response) {
-
+            console.log(response)
             if (response != undefined) {
                 // 요청 배열 검사
                 if (responseValidator(response.duration)) {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // 가림막 없애기
                     document.getElementById("refresh").style.visibility = "hidden";
                     // thumbnail 넣기
-                    createThumbnail(thumbnail);
+                    createThumbnail(thumbnail.small);
                 }
             }
         });
@@ -44,8 +44,9 @@ function responseValidator(arr) {
     return true;
 }
 
-function createThumbnail(url) {
-    let node = document.createElement("img");
-    node.src = url
-    document.querySelector('#thumbnail').appendChild(node);
+function createThumbnail(url){
+    document.querySelector('#thumbnail').style.backgroundImage = "url('" + url + "')";
+    document.querySelector('#thumbnail').style.height = "94px";
+    document.querySelector('body').style.height = '210px';
+    document.querySelector('html').style.height = '210px';
 }

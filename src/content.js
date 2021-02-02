@@ -4,8 +4,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     let videoDurations = [];
     let totalDuration = 0;
     let watchedDuration = 0;
-    const thumbSrc = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src //Thumbnail IMG src
-    
+    const thumbSrc = { 
+        big : document.querySelector('.style-scope.ytd-playlist-video-thumbnail-renderer.no-transition').childNodes[1].src, 
+        small : document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src
+    }
                     // [ 1 ] 함수 정의 //
 
         // 플레이리스트 총 시간/길이 계산
