@@ -95,5 +95,3 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({});
     }
 });
-// 재생목록 섭네일 위치
-// document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src
