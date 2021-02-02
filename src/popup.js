@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     // 가림막 없애기
                     document.getElementById("refresh").style.visibility = "hidden";
                 }
+                console.log(response.data)
+                createThumbnail(response.data.thumbnail);
             }
-
         });
 
         shadeCheck.addEventListener("click", function() {
@@ -40,4 +41,10 @@ function responseValidator(arr) {
         }
     }
     return true;
+}
+
+function createThumbnail(url) {
+    let node = document.createElement("img");
+    node.src = url
+    document.querySelector('#thumbnail').appendChild(node);
 }

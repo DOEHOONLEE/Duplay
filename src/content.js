@@ -74,6 +74,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         }
     }
 
+     //섭네일 이미지
+     const thumbSrc = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src
+
                    // [3] 함수 호출 + 전달 할 값 정의 //
                    
     // 1. 플레이리스트 총 길이 및 시청한 길이 계산
@@ -82,9 +85,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     
     // 배열 결과 값 => [총 시간, 시청 시간, 시청 한 시간 (퍼센트)]
     const result = [secToDisplayFormat(totalDuration), secToDisplayFormat(watchedDuration), watchedDuration / totalDuration];
+    const contentData = {
+        thumbnail: thumbSrc
+    }
+
+   
 
     if (request.action === "getDuration") {
-        sendResponse({ duration: result })
+        sendResponse({ duration: result, data: contentData })
     }
     else if (request.action === "shadeOut") {
         watchCompleted(request.value);
@@ -93,3 +101,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({});
     }
 });
+// 재생목록 섭네일 위치
+// document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src

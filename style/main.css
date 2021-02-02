@@ -74,5 +74,7 @@ div {
     height: auto;
     z-index: 1000;
     border-radius: 6px;
-
+}
+.inlineBlock{
+    display: inline-block;
 }
