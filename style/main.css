@@ -73,7 +73,9 @@ div {
     height: auto;
     z-index: 1000;
     border-radius: 6px;
+    cursor: pointer;
 }
+
 .inlineBlock{
     display: inline-block;
 }
