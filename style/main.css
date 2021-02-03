@@ -10,7 +10,7 @@ body {
 html, body{
     overflow-x: hidden;
     overflow-y: hidden;
-    margin-top: 3px;
+    margin-top: 0;
     height: 112px;
 }
 
@@ -67,12 +67,13 @@ div {
     text-align: center;
     line-height: 95px;
     font-size: 22px;
-    /* visibility: hidden; */
     top: 2px;
     left: 7px;
     width: 170px;
     height: auto;
     z-index: 1000;
     border-radius: 6px;
-
+}
+.inlineBlock{
+    display: inline-block;
 }
