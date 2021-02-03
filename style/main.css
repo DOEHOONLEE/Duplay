@@ -67,7 +67,6 @@ div {
     text-align: center;
     line-height: 95px;
     font-size: 22px;
-    /* visibility: hidden; */
     top: 2px;
     left: 7px;
     width: 170px;
@@ -77,7 +76,4 @@ div {
 }
 .inlineBlock{
     display: inline-block;
-}
-#thumbnail{
-    height: 94px;
 }

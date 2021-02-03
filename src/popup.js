@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     // 가림막 없애기
                     document.getElementById("refresh").style.visibility = "hidden";
+                    
                     // thumbnail 넣기
                     createThumbnail(thumbnail.small);
                 }
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         shadeCheck.addEventListener("click", function() {
             const shadeCheck = document.querySelector('#shadeCheck');
             chrome.tabs.sendMessage(activeTab.id, { action: "shadeOut", value: shadeCheck.checked })
-        })
+        });
     })
 })
 

@@ -1,0 +1,5 @@
+#progress-bar{
+    width:0%;
+    transition-property: width;
+    transition-duration: 3s;
+}
