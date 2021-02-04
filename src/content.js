@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     let videoDurations = [];
     let totalDuration = 0;
     let watchedDuration = 0;
-    const thumbnailBig = document.querySelector('.style-scope.ytd-playlist-video-thumbnail-renderer.no-transition').childNodes[1].src;
+    // const thumbnailBig = document.querySelector('.style-scope.ytd-playlist-video-thumbnail-renderer.no-transition').childNodes[1].src;
     const thumbnailSmall = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src;
 
                    // [ 1 ] 함수 정의 //
@@ -65,16 +65,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     // 100 퍼센트 시청한 영상 투명도 조절 함수
     function watchCompleted(shadeCheck){
         const percent_100 = [...document.querySelectorAll('#progress')].filter(percent => percent.style.width === '100%');
-        if (shadeCheck) {
-            percent_100.forEach( video => {
-                video.parentNode.parentNode.parentNode.parentNode.parentNode.style.opacity = '0.4';
-            });
-        }
-        else {
-            percent_100.forEach( video => {
-                video.parentNode.parentNode.parentNode.parentNode.parentNode.style.opacity = '1';
-            });
-        }
+        
+        percent_100.forEach( video => {
+            video.parentNode.parentNode.parentNode.parentNode.parentNode.style.opacity = `${shadeCheck ? "0.4" : "1"}`;
+        });
     }
 
     // content 페이지 새로고침
