@@ -90,7 +90,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         "totalDuration": secToDisplayFormat(totalDuration),
         "watchedDuration": secToDisplayFormat(watchedDuration),
         "progress": watchedDuration / totalDuration,
-        "thumbnailBig": thumbnailBig,
         "thumbnailSmall": thumbnailSmall,
     }
     
@@ -100,9 +99,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             break;
         case "shadeOut":
             watchCompleted(request.value);
-            break;
-        case "refresh":
-            contentRefresh();
             break;
     }
 });
