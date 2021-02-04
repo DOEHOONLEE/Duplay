@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const activeTab = tabs[0];
 
         chrome.tabs.sendMessage(activeTab.id, { action: "getDuration" }, function(response) {
-
+            
             if (response != undefined) {
                 // 요청 배열 검사
                 if (responseValidator(response.duration)) {
