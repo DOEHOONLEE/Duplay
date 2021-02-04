@@ -6,7 +6,18 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     let watchedDuration = 0;
     // const thumbnailBig = document.querySelector('.style-scope.ytd-playlist-video-thumbnail-renderer.no-transition').childNodes[1].src;
     const thumbnailSmall = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src;
+    //재생목록
+    const playlistWhilePlaying = document.querySelector('#container.style-scope.ytd-playlist-panel-renderer').querySelectorAll('span.ytd-thumbnail-overlay-time-status-renderer');
+    let playlistContainer;
+    let watchedList;
 
+    if ([...playlistWhilePlaying].length === 0){
+        playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer");
+        watchedList = [...document.querySelectorAll("#progress")].slice(0,-1)
+    }else{
+        playlistContainer = playlistWhilePlaying;
+        watchedList = [...document.querySelector('#container.style-scope.ytd-playlist-panel-renderer').querySelectorAll('#progress.style-scope.ytd-thumbnail-overlay-resume-playback-renderer')];
+    }
                    // [ 1 ] 함수 정의 //
 
     // 플레이리스트 총 시간/길이 계산
@@ -28,8 +39,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 
     // 시청한 비디오 시간 계산
+    
     function checkWatched() {
-        const watchedList = [...document.querySelectorAll("#progress")].slice(0,-1);
         watchedList.forEach(eachVideo => {
             const HMS = eachVideo.parentNode.parentNode.children[2].innerText.trim();
             const percentile = eachVideo.style.width;
@@ -71,21 +82,17 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         });
     }
 
-    // content 페이지 새로고침
-    function contentRefresh() {
-        console.log("aefiaje");
-        location.reload();
-    }
-
-
                     // [3] 함수 호출 + 전달 할 값 정의 //
                     
     // 1. 플레이리스트 총 길이 및 시청한 길이 계산
-    const playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer");
+    
     totalDurationCalc(playlistContainer);
+        
+    
     
     // 객체 데이터 => {총 시간, 시청 시간, 시청 한 시간(퍼센트), 썸네일(큰), 썸네일(작은)}
     // 
+    console.log(totalDuration)
     const dataObject = {
         "totalDuration": secToDisplayFormat(totalDuration),
         "watchedDuration": secToDisplayFormat(watchedDuration),

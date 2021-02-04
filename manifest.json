@@ -15,11 +15,13 @@
   "content_scripts": [
     {
       "run_at": "document_idle",
-      "matches": ["https://www.youtube.com/playlist?list=*"],
+      "matches": ["https://www.youtube.com/playlist?list=*", "https://www.youtube.com/watch?"],
       "js": ["./src/content.js"]
     }
   ],
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "https://www.youtube.com/playlist?list=*",
+    "https://www.youtube.com/watch?"
   ]
 }
