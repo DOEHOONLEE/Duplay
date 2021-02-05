@@ -4,8 +4,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     let videoDurations = [];
     let totalDuration = 0;
     let watchedDuration = 0;
-    // const thumbnailBig = document.querySelector('.style-scope.ytd-playlist-video-thumbnail-renderer.no-transition').childNodes[1].src;
+    const playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer");
     const thumbnailSmall = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src;
+    const watchedList = [...document.querySelectorAll("#progress")].slice(0,-1);
 
                    // [ 1 ] 함수 정의 //
 
@@ -29,7 +30,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     // 시청한 비디오 시간 계산
     function checkWatched() {
-        const watchedList = [...document.querySelectorAll("#progress")].slice(0,-1);
         watchedList.forEach(eachVideo => {
             const HMS = eachVideo.parentNode.parentNode.children[2].innerText.trim();
             const percentile = eachVideo.style.width;
@@ -71,17 +71,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         });
     }
 
-    // content 페이지 새로고침
-    function contentRefresh() {
-        console.log("aefiaje");
-        location.reload();
-    }
-
 
                     // [3] 함수 호출 + 전달 할 값 정의 //
                     
     // 1. 플레이리스트 총 길이 및 시청한 길이 계산
-    const playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer");
     totalDurationCalc(playlistContainer);
     
     // 객체 데이터 => {총 시간, 시청 시간, 시청 한 시간(퍼센트), 썸네일(큰), 썸네일(작은)}
