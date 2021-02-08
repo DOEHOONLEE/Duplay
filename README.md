@@ -1,21 +1,26 @@
 ## Duplay - YouTube Playlist Duration/Length Calculator
 
+## Preview
 
 **![DuPlay](https://user-images.githubusercontent.com/20305442/105867905-f03e9380-6038-11eb-9e64-b1f6ea34a53e.jpg)**
+
 
 ## Browser Extension/ Add-On
 
 Find out the duration of the YouTube Playlist and see how much you have watched (also displayed as a progress bar).
 
+
 ## Installation Link
 
 Currently available on **[Firefox](https://addons.mozilla.org/en-US/firefox/)** .
+
 
 ## Techs Used
 
 Built with HTML/CSS and JavaScript.
 
 Git/Github used for collaboration.
+
 
 ## Updates / Progress
 
@@ -38,8 +43,12 @@ Git/Github used for collaboration.
     - [x] Matching background image with playlist album
     - [ ] Make it work within the playlist as well
     - [ ] Enable shortcut keys
-    
+
+
  ## License
+ 
+[MIT LICENSE](LICENSE)
+
  
  ## Copyright
 
