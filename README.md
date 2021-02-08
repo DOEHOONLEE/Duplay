@@ -2,7 +2,7 @@
 
 ## Preview
 
-**![DuPlay](https://user-images.githubusercontent.com/20305442/105867905-f03e9380-6038-11eb-9e64-b1f6ea34a53e.jpg)**
+<img width="722" alt="Duplay" src="https://user-images.githubusercontent.com/20305442/107164230-7bcd0280-69f1-11eb-9082-620be067fdaa.png">
 
 
 ## Browser Extension/ Add-On
