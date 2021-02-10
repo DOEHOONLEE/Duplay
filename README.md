@@ -24,11 +24,11 @@ Git/Github used for collaboration.
 
 ## Updates / Progress
 
-| Version Released | Update Note | Date |
-| -- | -- | -- |
-| v1.0.1 | First release with minimal features <br /> <ul><li>Total Duration</li><li>Watched Time</li><li>Progress Bar</li></ul> | Jan 26, 2021 |
-| v1.0.2 | Bug fixed <br /> <ul><li>Scrollbar generated on Firefox</li></ul> <br /> Improvement <br /> <ul><li>Refresh notificatino added</li></ul> | Jan 27, 2021 |
-| v1.1.0 | UPGRADED UI/UX <br /> <ul><li>Thumbnail preview display added</li><li>Progressbar animated</li></ul> | Feb 5, 2021 |
+| Version Released | Update Note | Date | Store |
+| -- | -- | -- | -- |
+| v1.0.1 | Jan 26, 2021 | First release with minimal features <br /> <ul><li>Total Duration</li><li>Watched Time</li><li>Progress Bar</li></ul> | FireFox |
+| v1.0.2 | Jan 27, 2021 | Bug fixed <br /> <ul><li>Scrollbar generated on Firefox</li></ul> <br /> Improvement <br /> <ul><li>Refresh notificatino added</li></ul> | Firefox |
+| v1.1.0 | Feb 5, 2021 | UPGRADED UI/UX <br /> <ul><li>Thumbnail preview display added</li><li>Progressbar animated</li></ul> | Firefox |
 
  + Bugs
     - [x] Size is changed on Firefox
