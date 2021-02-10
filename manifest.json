@@ -18,8 +18,5 @@
       "matches": ["https://www.youtube.com/playlist?list=*"],
       "js": ["./src/content.js"]
     }
-  ],
-  "permissions": [
-    "tabs"
   ]
 }
