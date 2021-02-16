@@ -1,7 +1,7 @@
 {
   "name": "YouTube Playlist Duration Calculator",
   "version": "1.1.0",
-  "description": "Youtube Playlist Duration Calculator",
+  "description": "Get total length/duration of YouTube playlist of lectures, tutorials, music videos, etc.",
   "manifest_version": 2,
   "icons": {
     "128": "./img/icon128.png",
