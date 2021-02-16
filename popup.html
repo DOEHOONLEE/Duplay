@@ -5,8 +5,12 @@
         <link rel="stylesheet" href="./style/main.css">
         <link rel="stylesheet" href="./style/switch.css">
         <link rel="stylesheet" href="./style/tooltip.css">
+        <link rel="stylesheet" href="./style/progressBarAnimation.css">
     </head>
     <body>
+
+        <div id="refresh">Pleaes Refresh</div>
+        <div id='thumbnail'></div>
         <div id="total-container">
             <span>
                 <strong>Total Duration</strong>
@@ -17,7 +21,8 @@
             <span>
                 <strong>Watched</strong>
             </span>
-            <span id="watched"></span>
+            <span id="watched">
+            </span>
         </div>
         <div id="shade-controller">
             <span>
@@ -28,15 +33,17 @@
                 </div>
             </span>
             <label class="switch">
-                <input type="checkbox" id = 'shadeCheck'>
+                <input type="checkbox" id='shadeCheck'>
                 <span class="slider round"></span>
             </label>
         </div>
         <div id="percent-container">
-            <span id="progress-bar"></span>
+            <span id="progress-bar">
+                <strong id="percent-value"></strong>
+            </span>
             <span id="percent"></span>
         </div>
-        
-        <script src="./src/popup.js"></script>
+
+    <script src="./src/popup.js"></script>
     </body>
 </html>
