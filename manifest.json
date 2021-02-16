@@ -1,7 +1,7 @@
 {
-  "name": "YouTube Playlist Duration Calculator",
+  "name": "유튜브 재생목록 계산기",
   "version": "1.1.0",
-  "description": "Youtube Playlist Duration Calculator",
+  "description": "유튜브 재생목록 총 시간/ 시청시간 계산기",
   "manifest_version": 2,
   "icons": {
     "128": "./img/icon128.png",
