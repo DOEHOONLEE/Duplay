@@ -12,7 +12,7 @@ Find out the duration of the YouTube Playlist and see how much you have watched 
 
 ## Installation Link
 
-Currently available on **[Chrome](https://chrome.google.com/webstore/detail/youtube-playlist-duration/hfkcllpkaefjfaiiobanmfkabkncfike)** and **[Firefox](https://addons.mozilla.org/en-US/firefox/)** .
+Currently available on **[Chrome](https://chrome.google.com/webstore/detail/youtube-playlist-duration/hfkcllpkaefjfaiiobanmfkabkncfike)** and **[Firefox](https://addons.mozilla.org/en-US/firefox/)** and **[Whale](https://store.whale.naver.com/detail/kdmmhmgginpoefppchofhheijgkioifa)**.
 
 
 ## Techs Used
@@ -26,10 +26,10 @@ Git/Github used for collaboration.
 
 | Version Released | Update Note | Date | Store |
 | -- | -- | -- | -- |
-| v1.0.1 | Jan 26, 2021 | First release with minimal features <br /> <ul><li>Total Duration</li><li>Watched Time</li><li>Progress Bar</li></ul> | FireFox |
-| v1.0.2 | Jan 27, 2021 | Bug fixed <br /> <ul><li>Scrollbar generated on Firefox</li></ul> <br /> Improvement <br /> <ul><li>Refresh notificatino added</li></ul> | Firefox |
-| v1.1.0 | Feb 5, 2021 | UPGRADED UI/UX <br /> <ul><li>Thumbnail preview display added</li><li>Progressbar animated</li></ul> | Firefox |
-| v1.1.0 | Feb 13, 2021 | - | Chrome & Firefox |
+| v1.0.1 | Jan 26, 2021 | First release with minimal features <br /> <ul><li>Total Duration</li><li>Watched Time</li><li>Progress Bar</li></ul> | FireFox & Whale |
+| v1.0.2 | Jan 27, 2021 | Bug fixed <br /> <ul><li>Scrollbar generated on Firefox</li></ul> <br /> Improvement <br /> <ul><li>Refresh notificatino added</li></ul> | Firefox & Whale |
+| v1.1.0 | Feb 5, 2021 | UPGRADED UI/UX <br /> <ul><li>Thumbnail preview display added</li><li>Progressbar animated</li></ul> | Firefox & Whale |
+| v1.1.0 | Feb 13, 2021 | - | Chrome & Firefox & Whale |
 
  + Bugs
     - [x] Size is changed on Firefox
