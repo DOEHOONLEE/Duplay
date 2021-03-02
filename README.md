@@ -12,7 +12,7 @@ Find out the duration of the YouTube Playlist and see how much you have watched 
 
 ## Installation Link
 
-Currently available on **[Chrome](https://chrome.google.com/webstore/detail/youtube-playlist-duration/hfkcllpkaefjfaiiobanmfkabkncfike)** and **[Firefox](https://addons.mozilla.org/en-US/firefox/)** and **[Whale](https://store.whale.naver.com/detail/kdmmhmgginpoefppchofhheijgkioifa)**.
+Currently available on **[Chrome](https://chrome.google.com/webstore/detail/youtube-playlist-duration/hfkcllpkaefjfaiiobanmfkabkncfike)** and **[Firefox](https://addons.mozilla.org/en-US/firefox/addon/doe-hoon-lee/)** and **[Whale](https://store.whale.naver.com/detail/kdmmhmgginpoefppchofhheijgkioifa)**.
 
 
 ## Techs Used
