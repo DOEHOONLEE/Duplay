@@ -30,9 +30,10 @@ function createThumbnail(thumbnailSrc){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    
     chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         const activeTab = tabs[0];
-
+        
         chrome.tabs.sendMessage(activeTab.id, { action: "getDuration" }, function(response) {
 
             if (response != undefined) {

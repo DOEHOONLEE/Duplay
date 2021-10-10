@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     let totalDuration = 0;
     let watchedDuration = 0;
     const playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer");
-    const thumbnailSmall = document.querySelector('.style-scope.ytd-thumbnail.no-transition').childNodes[1].src;
+    const thumbnailSmall = document.querySelectorAll(".style-scope.ytd-playlist-video-thumbnail-renderer.no-transition")[0].childNodes[1].src;
     const watchedList = [...document.querySelectorAll("#progress")].slice(0,-1);
 
                    // [ 1 ] 함수 정의 //

@@ -14,9 +14,13 @@
   },
   "content_scripts": [
     {
-      "run_at": "document_idle",
-      "matches": ["https://www.youtube.com/playlist?list=*"],
-      "js": ["./src/content.js"]
+      "run_at": "document_start",
+      "matches": [
+        "https://www.youtube.com/playlist?list=*"
+      ],
+      "js": [
+        "./src/content.js"
+      ]
     }
   ]
 }
