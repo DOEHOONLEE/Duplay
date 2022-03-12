@@ -51,14 +51,10 @@ function drawPopup(response){
 }
 
 function refreshTap(){
-    if(refresh.style.display!='none'){
         chrome.runtime.sendMessage({ action: "REFRESH" })
-    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-
-    refreshTap();
 
     chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         const activeTab = tabs[0];
@@ -69,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (responseValidator(response.duration)) {
                     drawPopup(response);
                 }
+            }else{
+                refreshTap()
             }
         });
         
