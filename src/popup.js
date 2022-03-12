@@ -30,10 +30,8 @@ function createThumbnail(thumbnailSrc){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    
     chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         const activeTab = tabs[0];
-        
         chrome.tabs.sendMessage(activeTab.id, { action: "getDuration" }, function(response) {
 
             if (response != undefined) {
@@ -61,6 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         });
+        if(refresh.style.visibility!=='hidden'){
+            chrome.runtime.sendMessage({ action: "REFRESH" })
+        }
 
         shadeCheck.addEventListener("click", function() {
             chrome.tabs.sendMessage(activeTab.id, { action: "shadeOut", value: shadeCheck.checked })
