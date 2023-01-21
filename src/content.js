@@ -4,8 +4,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     let videoDurations = [];
     let totalDuration = 0;
     let watchedDuration = 0;
-    const playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer");
-    const thumbnailSmall = document.querySelectorAll(".style-scope.ytd-playlist-video-thumbnail-renderer.no-transition")[0].childNodes[1].src;
+    const playlistContainer = document.querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer")
+    const thumbnailSmall = document.querySelector(".yt-core-image--fill-parent-height.yt-core-image--fill-parent-width.yt-core-image.yt-core-image--content-mode-scale-aspect-fill.yt-core-image--loaded").src;
     const watchedList = [...document.querySelectorAll("#progress")].slice(0,-1);
 
                    // [ 1 ] 함수 정의 //
@@ -14,7 +14,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     function totalDurationCalc(playlist) {
         // 각 비디오의 시간 받아오기
         for (let i=0; i < playlist.length; i++) {
+            console.log(playlist[i])
             if (playlist[i].tagName === "SPAN") {
+                console.log(playlist[i].innerHTML.trim())
                 videoDurations.push(playlist[i].innerHTML.trim());
             }
         }
