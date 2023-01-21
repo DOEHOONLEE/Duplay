@@ -14,9 +14,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     function totalDurationCalc(playlist) {
         // 각 비디오의 시간 받아오기
         for (let i=0; i < playlist.length; i++) {
-            console.log(playlist[i])
             if (playlist[i].tagName === "SPAN") {
-                console.log(playlist[i].innerHTML.trim())
                 videoDurations.push(playlist[i].innerHTML.trim());
             }
         }
